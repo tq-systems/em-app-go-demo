@@ -1,0 +1,23 @@
+---
+include:
+- project: tq-em/public/build/toolchain
+  file: ci/apps.yml
+  ref: main
+
+Prepare:
+  extends: .prepare-app-build
+
+Build Package (aarch64):
+  extends: .build-aarch64-app
+
+Go Linter:
+  extends: .go-lint
+
+Go Sec:
+  extends: .go-sec
+
+Gitleaks:
+  extends: .gitleaks
+
+Deploy:
+  extends: .simple-deploy
