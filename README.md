@@ -1,6 +1,7 @@
 # Go Demo Application
 ## Description
-This is a simple Go application.
+This is a simple Go application for demonstration purposes. It is intended to make it easier to
+get started developing Go applications for the Energy Manager.
 
 ## License information
 All files in this project are classified as product-specific software and bound to the
