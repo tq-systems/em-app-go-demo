@@ -1,5 +1,9 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/goburrow/modbus v0.1.0 h1:DejRZY73nEM6+bt5JSP6IsFolJ9dVcqxsYbpLbeW/ro=
+github.com/goburrow/modbus v0.1.0/go.mod h1:Kx552D5rLIS8E7TyUwQ/UdHEqvX5T8tyiGBTlzMcZBg=
+github.com/goburrow/serial v0.1.0 h1:v2T1SQa/dlUqQiYIT8+Cu7YolfqAi3K96UmhwYyuSrA=
+github.com/goburrow/serial v0.1.0/go.mod h1:sAiqG0nRVswsm1C97xsttiYCzSLBmUZ/VSlVLZJ8haA=
 github.com/godbus/dbus/v5 v5.1.0 h1:4KLkAxT3aOY8Li4FRJe/KvhoNFFxo0m6fNuFUO8QJUk=
 github.com/godbus/dbus/v5 v5.1.0/go.mod h1:xhWf0FNVPg57R7Z0UbKHbJfkEywrmjJnf7w5xrFpKfA=
 github.com/google/go-cmp v0.5.5 h1:Khx7svrCpmxxtHBq5j2mp/xVjsi8hQMfNLvJFAlrGgU=
@@ -14,8 +18,12 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.9.0 h1:HtqpIVDClZ4nwg75+f6Lvsy/wHu+3BoSGCbBAcpTsTg=
 github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
+github.com/tbrandon/mbserver v0.0.0-20231208015628-36eb59221ac2 h1:2H0HcvMX8JEa4HD32KJNBMwOBmCLs9xYOWVE8ig06Ss=
+github.com/tbrandon/mbserver v0.0.0-20231208015628-36eb59221ac2/go.mod h1:qUzPVlSj2UgxJkVbH0ZwuuiR46U8RBMDT5KLY78Ifpw=
 github.com/tq-systems/em-gdr/v2 v2.2.0 h1:rKWJTwAY3E2UFsC5S+k6KEEeQQkNKiKSiMMOPvLQcFA=
 github.com/tq-systems/em-gdr/v2 v2.2.0/go.mod h1:XcW42fVFP8CjbdzhySyo9k2FYdGzsTYnCvDPTbrGKfI=
+github.com/tq-systems/go-dbus v1.1.1 h1:gJW4/su+tCKhBtCmLqj/B4ZQKbpYOTWUgVhpNp9Pqq8=
+github.com/tq-systems/go-dbus v1.1.1/go.mod h1:DhFMde5nqPG0+pPG+F3IXbZ7e2azbB4t0ccrVhKFI4w=
 github.com/tq-systems/public-go-utils/v3 v3.1.0 h1:RZ8l0RcMzX3je2rdn2W2ZE/pcxxvkraMsw2NpucpC6I=
 github.com/tq-systems/public-go-utils/v3 v3.1.0/go.mod h1:8M/jBv+r3U/YNNu9YROesGPmFIr+Wcyq2BjkrlAfMzs=
 golang.org/x/sys v0.32.0 h1:s77OFDvIQeibCmezSnk/q6iAfkdiQaJi4VzroCFrN20=

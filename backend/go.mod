@@ -3,7 +3,11 @@ module github.com/tq-systems/em-app-go-demo/backend
 go 1.23.6
 
 require (
+	github.com/goburrow/modbus v0.1.0
+	github.com/goburrow/serial v0.1.0
+	github.com/tbrandon/mbserver v0.0.0-20231208015628-36eb59221ac2
 	github.com/tq-systems/em-gdr/v2 v2.2.0
+	github.com/tq-systems/go-dbus v1.1.1
 	github.com/tq-systems/public-go-utils/v3 v3.1.0
 )
 

@@ -19,14 +19,17 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/tq-systems/em-app-go-demo/backend/modbus"
 	gdr "github.com/tq-systems/em-gdr/v2"
+	"github.com/tq-systems/go-dbus/serial"
 	"github.com/tq-systems/public-go-utils/v3/log"
 	mqttHandler "github.com/tq-systems/public-go-utils/v3/mqtt"
 	"github.com/tq-systems/public-go-utils/v3/rest"
 )
 
 const (
-	baseURL = "/api/go-demo"
+	baseURL    = "/api/go-demo"
+	clientName = "go-demo"
 	// smart-meter values topic ​​(voltage, current, power, etc.)
 	topic = "gdr/local/values/smart-meter"
 	// MqttID is the mqtt message ID of this service
@@ -69,6 +72,36 @@ func run() error {
 	// setup logging
 	log.InitLogger(*logLevel, *logToConsole)
 
+	// setup MQTT Client
+	mqttClient, err := mqttHandler.NewClient(*mqttBrokerHost, *mqttBrokerPort, MqttID)
+	if err != nil {
+		return fmt.Errorf("failed to initialize mqtt client: %v", err)
+	}
+	defer mqttClient.Close()
+
+	// MODBUS EXAMPLES START HERE (comment out if not needed)
+	// setup serial client
+	serialClient, err := serial.NewClient(clientName)
+	if err != nil {
+		return fmt.Errorf("failed to initialize serial client: %v", err)
+	}
+
+	// start modbus server
+	modbusServer, err := modbus.NewModbusServer(mqttClient, serialClient)
+	if err != nil {
+		return fmt.Errorf("failed to start modbus tcp server: %v", err)
+	}
+	defer modbusServer.Destructor()
+
+	// setup modbus client
+	modbusClient, err := modbus.NewModbusClient(mqttClient, serialClient)
+	if err != nil {
+		return fmt.Errorf("failed to start modbus tcp client: %v", err)
+	}
+	defer modbusClient.Destructor()
+
+	// MODBUS EXAMPLES END HERE
+
 	//  Do whatever you want here:
 	// ....
 
@@ -85,13 +118,6 @@ func run() error {
 		return fmt.Errorf("could not create server: %s", err)
 	}
 	restErrChan := restServer.AsyncServe()
-
-	// setup MQTT Client
-	mqttClient, err := mqttHandler.NewClient(*mqttBrokerHost, *mqttBrokerPort, MqttID)
-	if err != nil {
-		return fmt.Errorf("failed to initialize mqtt client: %s", err)
-	}
-	defer mqttClient.Close()
 
 	subscription, err := mqttClient.Subscribe(topic, onMessage)
 	if err != nil {
