@@ -2,7 +2,14 @@
 include:
 - project: tq-em/public/build/toolchain
   file: ci/apps.yml
+  ref: $TOOLCHAIN_REF
+  rules:
+    - if: $TOOLCHAIN_REF
+- project: tq-em/public/build/toolchain
+  file: ci/apps.yml
   ref: main
+  rules:
+    - if: $TOOLCHAIN_REF == null
 
 Prepare:
   extends: .prepare-app-build
