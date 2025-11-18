@@ -26,5 +26,5 @@ Go Sec:
 Gitleaks:
   extends: .gitleaks
 
-Deploy:
-  extends: .simple-deploy
+Deploy Snapshot:
+  extends: .deploy-snapshot
