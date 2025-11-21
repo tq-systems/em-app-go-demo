@@ -9,6 +9,12 @@
 #  The corresponding license text can also be found in the LICENSE file.
 #
 
+# The application ID must be unique across all Energy Manager applications. Ensure it does not
+# conflict with other apps in the bundle. It is typically derived from the project URL. It must be
+# hardcoded here because the official URL does not follow the common pattern for the app id.
+# The app id in the bundle definition has to match the app id in the application.
+APP_ID = go-demo
+
 # Meta information about the application
 APP_PRETTY_NAME = Go demo application
 DESCRIPTION = This application is a demo application for Go.
