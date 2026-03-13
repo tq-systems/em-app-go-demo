@@ -1,0 +1,23 @@
+{
+  "dataPoints": {
+    "active-energy": "Wirkenergie",
+    "active-power": "Wirkleistung",
+    "apparent-energy": "Scheinenergie",
+    "apparent-power": "Scheinleistung",
+    "current": "Stromstärke",
+    "enhanced-view": "Erweitert",
+    "phaseL1": "Phase L1",
+    "phaseL2": "Phase L2",
+    "phaseL3": "Phase L3",
+    "powerfactor": "Leistungsfaktor",
+    "reactive-energy": "Blindenergie",
+    "reactive-power": "Blindleistung",
+    "time": "Uhrzeit",
+    "total": "Total",
+    "voltage": "Spannung"
+  },
+  "go-demo": {
+    "app_name": "Go-Demo",
+    "headlinetable": "Messwerte pro Phase"
+  }
+}

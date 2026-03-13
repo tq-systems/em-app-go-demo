@@ -12,7 +12,6 @@ include:
   rules:
     - if: $PUBLIC_TOOLCHAIN_CI_REF
 
-
 Prepare:
   extends: .prepare-app-build
 
@@ -24,6 +23,33 @@ Go Linter:
 
 Go Sec:
   extends: .go-sec
+
+Unit Tests:
+  stage: test
+  extends:
+    - .artifacts-always-one-week
+    - .gitlab-runner-tag
+    - .rule-skip-for-integration-tests
+  script:
+    - make go-test-junit
+  after_script:
+    - mkdir -p artifacts/tests/backend
+    - mv report.xml artifacts/tests/backend/${ARTIFACT_REF}_unittests.xml
+  coverage: '/total: \d+\.\d+/'
+  artifacts:
+    when: always
+    paths:
+      - artifacts/tests/backend/${ARTIFACT_REF}_unittests.xml
+    reports:
+      junit: artifacts/tests/backend/${ARTIFACT_REF}_unittests.xml
+
+
+Yarn Audit:
+  stage: test
+  extends:
+    - .gitlab-runner-tag
+  script:
+    - make yarn-audit
 
 Gitleaks:
   extends: .gitleaks

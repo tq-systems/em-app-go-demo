@@ -1,11 +1,14 @@
 /*
- * This file is part of the go-demo application.
- * More license information can be found in the root folder.
- *
- * SPDX-License-Identifier: LicenseRef-TQSPSLA-1.0.3
- *
- * Copyright (c) 2025 TQ-Systems GmbH <license@tq-group.com>, D-82229 Seefeld, Germany. All rights reserved.
+ * Copyright (c) 2025-2026 TQ-Systems GmbH <license@tq-group.com>, D-82229
+ * Seefeld, Germany. All rights reserved.
  * Author: Maximilian Eschenbacher and the Energy Manager development team
+ *
+ * This software is licensed under the TQ-Systems Product Software License
+ * Agreement Version 1.0.3 or any later version.
+ * You can obtain a copy of the License Agreement in the TQS (TQ-Systems
+ * Software Licenses) folder on the following website:
+ * https://www.tq-group.com/en/support/downloads/tq-software-license-conditions/
+ * In case of any license issues please contact license@tq-group.com.
  */
 
 package modbus
@@ -24,8 +27,8 @@ const (
 
 	// Modbus Server settings
 	DefaultModbusServerTcpAddrPort      = "0.0.0.0:502" // Default TCP address and port for Modbus server
-	DefaultModbusServerRtuInterfaceName = "APP1"        // Name of the serial interface for Modbus RTU server
-	EnableModbusServerRtu               = true          // Set to true to enable Modbus RTU over serial interface
+	DefaultModbusServerRtuInterfaceName = "APP1"         // Name of the serial interface for Modbus RTU server
+	EnableModbusServerRtu               = true           // Set to true to enable Modbus RTU over serial interface
 
 	// MQTT topics
 	MqttModbusClientInTopic  = "modbus/local/values/client/in"

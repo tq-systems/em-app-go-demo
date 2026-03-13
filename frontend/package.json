@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "dev": "node config/build.dev.js",
+    "build": "node config/build.prod.js"
+  },
+  "dependencies": {
+    "@tq-em/em-http-service": "https://github.com/tq-systems/em-frontend-http-service#v1.0.1",
+    "@tq-em/em-vue3-core": "https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "gdr": "https://github.com/tq-systems/em-gdr#v2.5.1",
+    "rollup-plugin-license": "^3.5.3",
+    "rollup-plugin-sbom": "^2.0.3",
+    "vite": "^6.0.5",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "copyright": "TQ-Systems GmbH 2026",
+  "license": "LicenseRef-TQSPSLA-1.0.3"
+}

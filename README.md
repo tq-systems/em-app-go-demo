@@ -1,7 +1,9 @@
 # Go Demo Application
 
+> **Disclaimer (Demo Only)**: This code is provided **solely for demonstration and educational purposes** within the TQ Energy Manager SDK. It is **not production‑ready**. Before using it in a production system you must review, harden, test, and adapt it (error handling, security, resource management, performance, observability, configuration, protocol edge cases).
+
 ## Description
-This is a comprehensive Go application for demonstration purposes designed for the TQ-Systems Energy Manager (EM400). It showcases best practices for developing Go applications on the Energy Manager platform, including MQTT communication, REST API endpoints, Modbus TCP/RTU client and server implementations, and integration with the Energy Manager's D-Bus services.
+This is a comprehensive Go application for demonstration purposes designed for the TQ-Systems Energy Manager. It showcases best practices for developing Go applications on the Energy Manager platform, including MQTT communication, REST API endpoints, a frontend that displays GDR data from the backend in tabular form, Modbus TCP/RTU client and server implementations, and integration with the Energy Manager's D-Bus services.
 
 ## Features
 
@@ -9,6 +11,7 @@ This is a comprehensive Go application for demonstration purposes designed for t
 - **REST API Server**: Unix socket-based REST API with example endpoints
 - **MQTT Integration**: Subscribe and publish to Energy Manager topics
 - **GDR Data Handling**: Process smart meter values using the Global Data Record (GDR) format
+- **Frontend Visualization**: Display backend-provided GDR smart meter values in a tabular frontend view
 - **Signal Handling**: Graceful shutdown on SIGINT/SIGTERM
 
 ### Modbus Support
@@ -17,26 +20,24 @@ This is a comprehensive Go application for demonstration purposes designed for t
 - **Modbus Client**: Support for both TCP and RTU protocols with read/write operations
 - **MQTT-Modbus Bridge**: Control and query Modbus devices via MQTT messages
 
+### Frontend
+- **Frontend**: Demo GUI that renders GDR data from the backend as a table to illustrate frontend integration
+
 ## Prerequisites
 
-- TQ-Systems Energy Manager (EM400)
+- TQ-Systems Energy Manager
 - Go 1.23.6 or later (for development)
 - Access to Energy Manager's MQTT broker
 - Network access for Modbus TCP (port 502 is configured in firewall)
+- Yarn 4.6.0
 
 ## Building
 
-The application uses the Energy Manager's build system. To build:
-
-```bash
-make
-```
-
-This will compile the Go backend and package it according to the Energy Manager's app specifications.
+The application uses the TQ Energy Manager Application SDK build system to compile the Go backend/frontend and package it according to the Energy Manager's app specifications. 
 
 ## Installation
 
-Deploy the built application to the Energy Manager following the standard EM400 app installation procedure.
+Deploy the built application to the Energy Manager following the standard TQ Energy Manager app installation procedure.
 
 ## Usage
 
@@ -59,6 +60,8 @@ em-app-go-demo [options]
 ### REST API Endpoints
 
 The application exposes a REST API on a Unix socket (default: `/run/em/apps/go-demo/socket`).
+
+The frontend uses the backend integration together with GDR websocket data to present current smart meter values in a table.
 
 **Base URL:** `/api/go-demo`
 
@@ -241,17 +244,28 @@ EnableModbusServerRtu = true
 ```
 .
 ├── backend/
-│   ├── main.go              # Application entry point
-│   ├── go.mod               # Go module dependencies
-│   └── modbus/              # Modbus client/server implementation
-│       ├── client.go        # Modbus client with MQTT control
-│       ├── server.go        # Modbus TCP/RTU server
-│       ├── defines.go       # Constants and data structures
-│       └── util.go          # Helper functions
-├── docs/                    # Documentation
-├── Makefile                 # Build configuration
-├── em-fw.conf              # Firewall configuration
-└── README.md               # This file
+│   ├── main.go                     # Application entry point
+│   ├── go.mod                      # Go module dependencies
+│   └── modbus/                     # Modbus client/server implementation
+│       ├── client.go               # Modbus client with MQTT control
+│       ├── server.go               # Modbus TCP/RTU server
+│       ├── defines.go              # Constants and data structures
+│       └── util.go                 # Helper functions
+├── frontend/
+|   ├── src 
+|       ├── components
+|           ├── CardDatapoints.vue  # displays backend-provided GDR smart meter values in a table
+|       ├── lang/default
+|           ├── de.json             # german translation strings
+|           ├── en.json             # english translation strings
+|       ├── utils
+|           ├── gdr.ts              # GDR WebSocket helpers and type re-exports
+|           ├── obis.ts             # OBIS code parsing and decoding utilities
+|       ├── ViewApp.vue             # root app-template <- start your frontend here
+├── docs/                           # Documentation
+├── Makefile                        # Build configuration
+├── em-fw.conf                      # Firewall configuration
+└── README.md                       # This file
 ```
 
 ### Key Dependencies
@@ -312,8 +326,8 @@ Logs are written to syslog by default. Use `-logconsole` flag to redirect to STD
 
 ## License Information
 
-All files in this project are classified as product-specific software and bound to the use with the TQ-Systems GmbH product: EM400
+All files in this project are classified as product-specific software and bound to the use with the TQ-Systems GmbH product: TQ Energy Manager Application SDK
 
     SPDX-License-Identifier: LicenseRef-TQSPSLA-1.0.3
 
-Copyright (c) 2025 TQ-Systems GmbH <license@tq-group.com>, D-82229 Seefeld, Germany. All rights reserved.
+Copyright (c) 2026 TQ-Systems GmbH <license@tq-group.com>, D-82229 Seefeld, Germany. All rights reserved.
