@@ -2,3 +2,6 @@
 /backend/build
 /backend/vendor
 /deploy
+
+/backend/coverprofile
+/report.xml
