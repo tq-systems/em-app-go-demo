@@ -1,0 +1,23 @@
+{
+  "dataPoints": {
+    "active-energy": "Active Energy",
+    "active-power": "Active Power",
+    "apparent-energy": "Apparent Energy",
+    "apparent-power": "Apparent Power",
+    "current": "Current",
+    "enhanced-view": "Advanced",
+    "phaseL1": "Phase L1",
+    "phaseL2": "Phase L2",
+    "phaseL3": "Phase L3",
+    "powerfactor": "Power Factor",
+    "reactive-energy": "Reactive Energy",
+    "reactive-power": "Reactive Power",
+    "time": "Time",
+    "total": "Total",
+    "voltage": "Voltage"
+  },
+  "go-demo": {
+    "app_name": "Go-Demo",
+    "headlinetable": "Readings per phase"
+  }
+}
