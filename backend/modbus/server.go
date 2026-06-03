@@ -107,9 +107,9 @@ func NewModbusServer(mqttClient mqtt.Client, serialClient serialClient.Client) (
 // initializeModbusRtu sets up the Modbus RTU interface and starts listening on it.
 // It binds the serial interface and configures the Modbus server to listen on the specified serial port.
 func (m *ModbusServer) initializeModbusRtu() error {
-	err := m.serialClient.BindInterface(DefaultModbusServerRtuInterfaceName, nil, false)
+	err := m.bindModbusRtu()
 	if err != nil {
-		return fmt.Errorf("failed to bind serial interface %s: %v", DefaultModbusServerRtuInterfaceName, err)
+		return err
 	}
 
 	err = m.server.ListenRTU(
@@ -124,6 +124,30 @@ func (m *ModbusServer) initializeModbusRtu() error {
 		return fmt.Errorf("failed to listen on serial device: %v", err)
 	}
 
+	return nil
+}
+
+// bindModbusRtu sets up Modbus RTU by binding the serial interface.
+func (m *ModbusServer) bindModbusRtu() error {
+	bindStates, err := m.serialClient.ListInterfaces()
+	if err != nil {
+		return fmt.Errorf("unable to get device list: %v", err)
+	}
+
+	state, ok := bindStates[DefaultModbusServerRtuInterfaceName]
+	if !ok {
+		return fmt.Errorf("serial interface not available")
+	}
+	if state == serialClient.BindUnavailable {
+		return fmt.Errorf("serial interface is already used by another service")
+	}
+
+	if state == serialClient.BindUnbound {
+		err := m.serialClient.BindInterface(DefaultModbusServerRtuInterfaceName, nil, false)
+		if err != nil {
+			return fmt.Errorf("failed to bind serial interface %s: %v", DefaultModbusServerRtuInterfaceName, err)
+		}
+	}
 	return nil
 }
 
@@ -194,7 +218,9 @@ func (m *ModbusServer) publishMqttMsg(addr uint16, value uint16) {
 // If Modbus RTU is enabled, it unbinds the serial interface.
 // This method should be called when the Modbus server is no longer needed.
 func (m *ModbusServer) Destructor() {
-	m.mqttSubscription.Unsubscribe()
+	if m.mqttSubscription != nil {
+		m.mqttSubscription.Unsubscribe()
+	}
 	if m.ticker != nil {
 		m.ticker.Stop()
 	}
