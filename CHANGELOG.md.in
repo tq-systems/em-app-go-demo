@@ -1,0 +1,4 @@
+## [{{ version }}]
+### Fixed
+- setup of serial modbus connection
+- missing language keys

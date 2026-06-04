@@ -18,6 +18,7 @@
   },
   "go-demo": {
     "app_name": "Go-Demo",
-    "headlinetable": "Messwerte pro Phase"
+    "headlinetable": "Messwerte pro Phase",
+    "title": "Go-Demo"
   }
 }

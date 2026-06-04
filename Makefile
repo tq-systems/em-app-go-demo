@@ -23,4 +23,11 @@ APPCLASS = no-time
 
 include /opt/energy-manager/apps/Makefile
 
+SERVICE_DEPENDS = em-app-device-settings.service
 SERVICE_OPTS_SOCKET = --listenprotocol unix --listen ${SERVICE_RUN_DIR}/socket --listengroup www
+
+define SERVICE_EXTRA_UNIT
+# Requires DBus interface of device settings to list devices attached to the
+# serial interface
+Requires=em-app-device-settings.service
+endef

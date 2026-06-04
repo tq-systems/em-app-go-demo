@@ -18,6 +18,7 @@
   },
   "go-demo": {
     "app_name": "Go-Demo",
-    "headlinetable": "Readings per phase"
+    "headlinetable": "Readings per phase",
+    "title": "Go-Demo"
   }
 }
