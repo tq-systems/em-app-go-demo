@@ -14,7 +14,7 @@
     "gdr": "https://github.com/tq-systems/em-gdr#v2.5.1",
     "rollup-plugin-license": "^3.5.3",
     "rollup-plugin-sbom": "^2.0.3",
-    "vite": "^6.0.5",
+    "vite": "^6.4.3",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vue": "^3.5.13",
     "vue-i18n": "^11.1.0"
