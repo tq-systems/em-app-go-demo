@@ -1,1 +1,3 @@
 ## [{{ version }}]
+### Changed
+- update vite to 6.4.3 (CVE fix)
