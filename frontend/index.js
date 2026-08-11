@@ -13,7 +13,7 @@
 
 import { createI18n } from 'vue-i18n'
 import store from 'shared/store.js'
-import { defineVueWebComponent } from '@tq-em/em-vue3-core'
+import { defineVueWebComponent } from '@tq-systems/em-vue3-core'
 import ViewApp from './src/ViewApp.vue'
 import Icon from './assets/dashboard-icon.svg?url'
 

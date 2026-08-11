@@ -200,7 +200,7 @@
 </template>
 
 <script setup lang="ts">
-import http from '@tq-em/em-http-service'
+import http from '@tq-systems/em-http-service'
 import { GDR } from '../utils/gdr'
 import { OBISCode } from '../utils/obis'
 import { useI18n } from 'vue-i18n'
