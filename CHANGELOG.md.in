@@ -1,1 +1,4 @@
 ## [{{ version }}]
+### Changed
+- frontend: Updates for Yarn update in the toolchain
+- frontend: Set Yarn security option enableScripts=false which disables preinstall, install and postinstall scripts

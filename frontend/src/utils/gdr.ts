@@ -14,7 +14,7 @@
 import {
     GDRs as GDRsDecoder,
     IGDR as GDR,
-} from 'gdr'
+} from '@tq-systems/em-gdr'
 
 export {
     GDR,

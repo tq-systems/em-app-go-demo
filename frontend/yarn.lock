@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 10
   cacheKey: 10c0
 
 "@babel/helper-string-parser@npm:^7.27.1":
@@ -666,25 +666,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tq-em/em-http-service@https://github.com/tq-systems/em-frontend-http-service#v1.0.1":
-  version: 1.0.0
-  resolution: "@tq-em/em-http-service@https://github.com/tq-systems/em-frontend-http-service.git#commit=75f1e038c1ddad1bf014abf326ab78ea9cbd58e9"
+"@tq-systems/em-gdr@https://github.com/tq-systems/em-gdr#v2.5.1":
+  version: 2.5.1
+  resolution: "@tq-systems/em-gdr@https://github.com/tq-systems/em-gdr.git#commit=06a77551b036dc1420d3a7c96afc2760ecfc5ef0"
   dependencies:
-    axios: "npm:^1.14.0"
-  checksum: 10c0/46bfd8aeb5c05c2b507270a5b3dd127cc60c73b2b4ecbaa30df81f0abc1765733d8b2a769c0282e4452eef6c55728722e0742c13e4523da02b4a888790b1b319
+    protobufjs: "npm:^7.4.0"
+  checksum: 10c0/101c48fec2738d3d9de9e6f0ea17cd7d5aa1ecb9f5d834de052f5035e5f4e3fd687d6fac02daaa419ece96f17a0ffa991e168c5670467f154ec49d6eb7650d6b
   languageName: node
   linkType: hard
 
-"@tq-em/em-vue3-core@https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1":
+"@tq-systems/em-http-service@https://github.com/tq-systems/em-frontend-http-service#v1.0.1":
+  version: 1.0.0
+  resolution: "@tq-systems/em-http-service@https://github.com/tq-systems/em-frontend-http-service.git#commit=75f1e038c1ddad1bf014abf326ab78ea9cbd58e9"
+  dependencies:
+    axios: "npm:^1.14.0"
+  checksum: 10c0/83a58d210bbc70e45c5adc900bd1aff4ace8973c8df0f6aa777c98dc4c629c9a6ea6d95c762c8d4e82064d773b175f87602535add4fc9b7b2a61f495d3958f29
+  languageName: node
+  linkType: hard
+
+"@tq-systems/em-vue3-core@https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1":
   version: 1.0.1
-  resolution: "@tq-em/em-vue3-core@https://github.com/tq-systems/em-frontend-vue3-core.git#commit=2e2e26d6eb9a034c2b7a46d2b34cb44e3347c3d2"
+  resolution: "@tq-systems/em-vue3-core@https://github.com/tq-systems/em-frontend-vue3-core.git#commit=2e2e26d6eb9a034c2b7a46d2b34cb44e3347c3d2"
   peerDependencies:
     vue: ^3.5.13
     vue-router: ^4.5.0
   peerDependenciesMeta:
     vue-router:
       optional: true
-  checksum: 10c0/26384fac0728bbbfbec0e2ae555bec77b36d2df3a5b5af078c339c05e0b662e246c962d10be0c1a1d509a9d6a560c8864fc5baf50313c9f2deb8fa4cb5d4e9ec
+  checksum: 10c0/cd76b55a050376262fd163d4ad6dc13f3c1e08c2b1d26fb3d57317c221d13043315f027a97a3b18dbfcd37a8a54b7dad271f80345f26754f989430c7e46fad48
   languageName: node
   linkType: hard
 
@@ -1568,15 +1577,6 @@ __metadata:
   version: 1.1.2
   resolution: "function-bind@npm:1.1.2"
   checksum: 10c0/d8680ee1e5fcd4c197e4ac33b2b4dce03c71f4d91717292785703db200f5c21f977c568d28061226f9b5900cbcd2c84463646134fd5337e7925e0942bc3f46d5
-  languageName: node
-  linkType: hard
-
-"gdr@https://github.com/tq-systems/em-gdr#v2.5.1":
-  version: 2.5.1
-  resolution: "gdr@https://github.com/tq-systems/em-gdr.git#commit=06a77551b036dc1420d3a7c96afc2760ecfc5ef0"
-  dependencies:
-    protobufjs: "npm:^7.4.0"
-  checksum: 10c0/2737acb695a156e87562a3f108c02ed3e993524bc77159c94c26067ef5e4ede58a760dac95b18f843348c8bb679745e8da8f35531efb1d52f43e808fafbabc36
   languageName: node
   linkType: hard
 
@@ -2682,10 +2682,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@tq-em/em-http-service": "https://github.com/tq-systems/em-frontend-http-service#v1.0.1"
-    "@tq-em/em-vue3-core": "https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1"
+    "@tq-systems/em-gdr": "https://github.com/tq-systems/em-gdr#v2.5.1"
+    "@tq-systems/em-http-service": "https://github.com/tq-systems/em-frontend-http-service#v1.0.1"
+    "@tq-systems/em-vue3-core": "https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1"
     "@vitejs/plugin-vue": "npm:^5.2.1"
-    gdr: "https://github.com/tq-systems/em-gdr#v2.5.1"
     rollup-plugin-license: "npm:^3.5.3"
     rollup-plugin-sbom: "npm:^2.0.3"
     typescript: "npm:^5.3.0"
