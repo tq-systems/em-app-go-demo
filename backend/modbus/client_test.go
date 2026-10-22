@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2025-2026 TQ-Systems GmbH <license@tq-group.com>, D-82229
- * Seefeld, Germany. All rights reserved.
- * Author: Maximilian Eschenbacher and the Energy Manager development team
+ * Copyright (c) 2026 TQ-Systems GmbH <license@tq-group.com>, D-82229 Seefeld,
+ * Germany. All rights reserved.
+ * Author: Jonathan Backes and the Energy Manager development team
  *
  * This software is licensed under the TQ-Systems Product Software License
  * Agreement Version 1.0.3 or any later version.
@@ -11,7 +11,6 @@
  * In case of any license issues please contact license@tq-group.com.
  */
 
- 
 package modbus
 
 import (
