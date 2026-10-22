@@ -17,8 +17,8 @@ import (
 	"errors"
 	"testing"
 
-	mqttmock "github.com/tq-systems/em-app-go-demo/backend/modbus/mocks/mqtt"
-	serialmock "github.com/tq-systems/em-app-go-demo/backend/modbus/mocks/serial"
+	serialmock "github.com/tq-systems/go-dbus/mocks/serial"
+	mqttmock "github.com/tq-systems/public-go-utils/v3/mocks/mqtt"
 	"go.uber.org/mock/gomock"
 )
 

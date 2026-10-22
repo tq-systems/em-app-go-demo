@@ -17,7 +17,7 @@ import (
 	"errors"
 	"testing"
 
-	serialmock "github.com/tq-systems/em-app-go-demo/backend/modbus/mocks/serial"
+	serialmock "github.com/tq-systems/go-dbus/mocks/serial"
 	serialClient "github.com/tq-systems/go-dbus/serial"
 	"go.uber.org/mock/gomock"
 )
