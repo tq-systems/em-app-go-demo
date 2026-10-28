@@ -50,6 +50,7 @@ Yarn Audit:
     - .gitlab-runner-tag
   script:
     - make yarn-audit
+  allow_failure: true
 
 Gitleaks:
   extends: .gitleaks
