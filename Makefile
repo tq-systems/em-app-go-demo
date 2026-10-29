@@ -31,3 +31,14 @@ define SERVICE_EXTRA_UNIT
 # serial interface
 Requires=em-app-device-settings.service
 endef
+
+define SERVICE_EXTRA_SERVICE
+# Grant the service the capability to bind to network ports below 1024
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+# Allow access to TTY devices for modbus RTU
+DeviceAllow=/dev/ttyAPP1 rw
+DevicePolicy=closed
+# Grant the service access to the www and dialout group for the REST and modbus server
+SupplementaryGroups=www dialout
+endef

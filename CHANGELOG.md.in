@@ -1,4 +1,7 @@
 ## [{{ version }}]
+### Added
+- sandboxing configuration
+
 ### Changed
 - Updated copyright license and file headers
 - frontend: Updates for Yarn update in the toolchain
