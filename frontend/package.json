@@ -1,26 +1,26 @@
 {
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.4",
   "type": "module",
-  "packageManager": "yarn@4.18.0",
+  "packageManager": "yarn@4.18.1",
   "scripts": {
     "dev": "node config/build.dev.js",
     "build": "node config/build.prod.js"
   },
   "dependencies": {
-    "@tq-systems/em-gdr": "https://github.com/tq-systems/em-gdr#v2.5.1",
-    "@tq-systems/em-http-service": "https://github.com/tq-systems/em-frontend-http-service#v1.0.1",
-    "@tq-systems/em-vue3-core": "https://github.com/tq-systems/em-frontend-vue3-core#v1.0.1",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "rollup-plugin-license": "^3.5.3",
-    "rollup-plugin-sbom": "^2.0.3",
-    "vite": "^6.4.3",
+    "@tq-systems/em-gdr": "https://github.com/tq-systems/em-gdr#v2.9.1",
+    "@tq-systems/em-http-service": "https://github.com/tq-systems/em-frontend-http-service#v1.0.2",
+    "@tq-systems/em-vue3-core": "https://github.com/tq-systems/em-frontend-vue3-core#v1.0.2",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "rollup-plugin-license": "^3.7.1",
+    "rollup-plugin-sbom": "^2.1.2",
+    "vite": "^6.4.5",
     "vite-plugin-css-injected-by-js": "^3.5.2",
-    "vue": "^3.5.13",
-    "vue-i18n": "^11.1.0"
+    "vue": "^3.5.44",
+    "vue-i18n": "^11.4.16"
   },
   "devDependencies": {
-    "typescript": "^5.3.0"
+    "typescript": "^5.9.3"
   },
   "copyright": "TQ-Systems GmbH 2026",
   "license": "LicenseRef-TQSPSLA-1.0.3"

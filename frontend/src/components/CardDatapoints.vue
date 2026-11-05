@@ -16,7 +16,7 @@
                     <h2>{{ t("go-demo.headlinetable") }}</h2>
                 </div>
                 <div class="col-1">
-                    <span class="badge bg-primary">{{ $d(time, "timeLTS") }}</span>
+                    <span v-if="time !== null" class="badge bg-primary">{{ $d(time, "timeLTS") }}</span>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@ const props = defineProps({ gdr: { type: Object as () => GDR, required: true } }
 
 const { t } = useI18n()
 
-const time = ref('')
+const time = ref<string | null>(null)
 const enhanced = ref(false)
 const currentL1 = ref(0)
 const currentL2 = ref(0)

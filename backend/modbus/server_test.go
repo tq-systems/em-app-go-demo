@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2025-2026 TQ-Systems GmbH <license@tq-group.com>, D-82229
- * Seefeld, Germany. All rights reserved.
+ * Copyright (c) 2026 TQ-Systems GmbH <license@tq-group.com>, D-82229 Seefeld,
+ * Germany. All rights reserved.
  * Author: Frank Hammon and the Energy Manager development team
  *
  * This software is licensed under the TQ-Systems Product Software License
@@ -17,7 +17,7 @@ import (
 	"errors"
 	"testing"
 
-	serialmock "github.com/tq-systems/em-app-go-demo/backend/modbus/mocks/serial"
+	serialmock "github.com/tq-systems/go-dbus/mocks/serial"
 	serialClient "github.com/tq-systems/go-dbus/serial"
 	"go.uber.org/mock/gomock"
 )
