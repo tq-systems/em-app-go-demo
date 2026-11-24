@@ -35,6 +35,11 @@ This is a comprehensive Go application for demonstration purposes designed for t
 
 The application uses the TQ Energy Manager Application SDK build system to compile the Go backend/frontend and package it according to the Energy Manager's app specifications. 
 
+The frontend build includes `rollup-plugin-sbom`, see `frontend/config/utils/vite-config-utils.js`.
+It writes a CycloneDX software bill of materials to `frontend/dist/<variant>/cyclonedx/bom.json`,
+which the toolchain picks up and ships with the app package. Use this configuration as the
+template for your own app.
+
 ## Installation
 
 Deploy the built application to the Energy Manager following the standard TQ Energy Manager app installation procedure.

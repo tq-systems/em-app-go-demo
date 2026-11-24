@@ -38,10 +38,11 @@ export function createCommonViteConfig ({ rootDir, basePublicPath, mode, variant
                     },
                 },
             }),
+            // The plugin writes to its default path <outDir>/cyclonedx/bom.json,
+            // which is where the toolchain picks the SBOM up.
             sbom({
                 autodetect: false,
                 outFormats: ['json'],
-                output: resolve(outBase, 'sbom.json'),
             }),
         ],
         define: {
