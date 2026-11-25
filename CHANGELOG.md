@@ -1,3 +1,8 @@
+## [1.0.5] - 2026-11-25
+### Changed
+- frontend: remove the ineffective output option from the SBOM plugin, it writes to its default
+  path cyclonedx/bom.json below the build output directory
+
 ## [1.0.4] - 2026-11-05
 ### Added
 - sandboxing configuration
